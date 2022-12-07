@@ -13,6 +13,16 @@
             </field>
         </record>
 
+        <record id="view_res_partner_filter" model="ir.ui.view">
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="." position="inside">
+                    <filter string="Discount Code" name="Discount Code" domain="[('customer_discount_code','!=',False)]"></filter>
+                </xpath>
+            </field>
+        </record>
+
         <record id="view_partner_tree" model="ir.ui.view">
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_tree"
