@@ -3,11 +3,11 @@ from odoo import models, fields, api
 
 class SaleOrderInherit(models.Model):
     _inherit = "sale.order"
-    _description = ""
 
     sale_order_discount_estimated = fields.Float(string="Discount Total",
                                                  compute="_compute_discount_total"
                                                  )
+    short_story = fields.Char(string="Short Story")
 
     @api.depends('partner_id.discount_percentage')
     def _compute_discount_total(self):

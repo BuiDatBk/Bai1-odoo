@@ -2,18 +2,25 @@
 <odoo>
     <data>
 
-        <record id="res_partner_form_inherit" model="ir.ui.view">
-            <field name="name">advanced_sale.res_partner.form</field>
-            <field name="model">ProjectName.res_partner</field>
-            <field name="inherit_id" ref="ProjectName.ViewExternalID"/>
-            <field name="priority" eval="8"/>
+        <record id="view_partner_form" model="ir.ui.view">
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"
+            />
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='example_field']" position="replace">
-                    <field name="example_field2"/>
-                </xpath>
-                <xpath expr="//field[@name='example_field']" position="attributes">
-                    <attribute name="invisible">True</attribute>
-                </xpath>
+                <field name="website" position="after">
+                    <field name="customer_discount_code"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_partner_tree" model="ir.ui.view">
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"
+            />
+            <field name="arch" type="xml">
+                <field name="city" position="after">
+                    <field name="customer_discount_code"/>
+                </field>
             </field>
         </record>
     </data>
