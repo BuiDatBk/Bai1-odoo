@@ -40,3 +40,19 @@ class ResPartnerInherit(models.Model):
                 rec.discount_percentage = int(rec.customer_discount_code.split("_")[1])
             else:
                 rec.discount_percentage = False
+
+    def add_discount_code(self):
+        """Called by the action in xml, return the wizard form"""
+        ids = [x.id for x in self]
+        view_id = self.env.ref('advanced_sale.update_code_form_view').id
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Update Code',
+            'view_mode': 'form',
+            'view_id': view_id,
+            'res_model': 'update.code.wizard',
+            'target': 'new',
+            'context': {
+                'default_customer_ids': [(6, 0, ids)],
+            }
+        }

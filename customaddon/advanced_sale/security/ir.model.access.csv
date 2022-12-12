@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_customaddon/advanced_sale_customaddon/advanced_sale,customaddon/advanced_sale.customaddon/advanced_sale,model_customaddon/advanced_sale_customaddon/advanced_sale,base.group_user,1,1,1,1
+update_code,Update Code,model_update_code_wizard,base.group_user,1,1,1,1

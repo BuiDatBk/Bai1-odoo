@@ -25,10 +25,11 @@
     # always loaded
     'data': [
         'security/groups.xml',
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'views/res_partner_inherit.xml',
         'views/sale_order_inherit.xml',
         'views/menu_customer_have_code.xml',
+        'wizard/update_code_wizard.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
