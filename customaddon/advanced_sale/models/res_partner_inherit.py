@@ -8,7 +8,7 @@ from odoo.tools.translate import _
 class ResPartnerInherit(models.Model):
     _inherit = "res.partner"
 
-    customer_discount_code = fields.Text('Discount Code')
+    customer_discount_code = fields.Text(string="Discount Code" , groups="advanced_sale.group_advanced_sale")
     # , groups="advanced_sale.group_advanced_sale"
     discount_percentage = fields.Integer("Discount Percentage", compute="_discount_percentage")
 

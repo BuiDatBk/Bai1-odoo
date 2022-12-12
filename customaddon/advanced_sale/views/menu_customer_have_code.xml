@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--    <record id='customer_have_code_action' model='ir.actions.act_window'>-->
+<!--        <field name="name">Customer_have nde</field>-->
+<!--        <field name="res_model">res.partner</field>-->
+<!--        <field name="view_mode">tree,form</field>-->
+<!--    </record>-->
+
+<!--    <menuitem name="Customer Have Code" id="customer_have_code_menu"-->
+<!--              sequeue = "10"-->
+<!--              parent="sale.sale_order_menu"-->
+<!--              action="customer_have_code_action"/>-->
+</odoo>
