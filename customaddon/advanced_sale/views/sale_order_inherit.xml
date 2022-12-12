@@ -14,24 +14,44 @@
         </record>
 
 
-<!--        <record id="view_order_tree" model="ir.ui.view">-->
-<!--            <field name="model">sale.order</field>-->
-<!--            <field name="inherit_id" ref="sale.view_order_tree"-->
-<!--            />-->
-<!--            <field name="arch" type="xml">-->
-<!--                <field name="date_order" position="after">-->
-<!--                    <field name=""/>-->
-<!--                </field>-->
-<!--            </field>-->
-<!--        </record>-->
+        <!--        <record id="view_order_tree" model="ir.ui.view">-->
+        <!--            <field name="model">sale.order</field>-->
+        <!--            <field name="inherit_id" ref="sale.view_order_tree"-->
+        <!--            />-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <field name="date_order" position="after">-->
+        <!--                    <field name=""/>-->
+        <!--                </field>-->
+        <!--            </field>-->
+        <!--        </record>-->
         <record id="view_sales_order_filter" model="ir.ui.view">
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_sales_order_filter"/>
             <field name="arch" type="xml">
                 <xpath expr="." position="inside">
-                    <filter string="Discount Code" name="Discount Code" domain="[('partner_id.customer_discount_code','!=',False)]"></filter>
+                    <!--                <xpath expr="//filter[@name='order_month']" position="inside">-->
+                    <filter string="Discount Code" name="Discount Code"
+                            domain="[('partner_id.customer_discount_code','!=',False)]"/>
                 </xpath>
             </field>
         </record>
+
+        <record id="action_have_discount_code" model="ir.actions.act_window">
+            <field name="name">Valid Code</field>
+<!--            <field name="type">ir.actions.act_window</field>-->
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">tree</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('base.view_partner_tree')})]"
+            />
+            <field name="domain">[('has_valid_code','=',True)]</field>
+            <!--            <field name="search_view_id" ref="base.view_res_partner_filter"/>-->
+        </record>
+
+        <menuitem id="menu_have_discount_code"
+                  name="Valid Code"
+                  action="advanced_sale.action_have_discount_code"
+                  parent="sale.sale_order_menu"
+        />
     </data>
 </odoo>
