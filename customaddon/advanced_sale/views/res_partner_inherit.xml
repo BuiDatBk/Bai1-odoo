@@ -19,7 +19,7 @@
             <field name="arch" type="xml">
                 <xpath expr="." position="inside">
                     <filter string="Discount Code" name="Discount Code"
-                            domain="[('customer_discount_code','!=',False)]"></filter>
+                            domain="[('customer_discount_code','!=',False)]"/>
                 </xpath>
             </field>
         </record>

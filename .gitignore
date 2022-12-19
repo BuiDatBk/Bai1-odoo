@@ -47,25 +47,3 @@ package.json
 
 # avoid adding it after generation from tsconfig command
 tsconfig.json
-addons/
-CONTRIBUTING.md
-COPYRIGHT
-debian/
-doc/
-.idea/
-.github/
-LICENSE
-MANIFEST.in
-odoo/
-odoo-bin
-requirements.txt
-SECURITY.md
-setup/
-setup.cfg
-setup.py
-.local/
-**/__pycache__/
-*/__pycache__/*
-
-/.mailmap
-/enterpriseaddons/

@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'sale'],
+    'depends': ['base', 'sale_management'],
 
     # always loaded
     'data': [
@@ -30,6 +30,7 @@
         'views/sale_order_inherit.xml',
         'views/menu_customer_have_code.xml',
         'wizard/update_code_wizard.xml',
+        'views/website_sale_order_total_inherit.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

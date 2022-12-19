@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="cart_discount" name="Warranty Code" inherit_id="website_sale.total">
+            <xpath expr="//tr[@id='order_total_untaxed']" position="after">
+                <tr id="product_warranty">
+                    <td class="text-right border-0">Discount Code:</td>
+                    <td class="text-xl-right border-0">
+                        <span t-field="website_sale_order.partner_id.customer_discount_code"/>
+                    </td>
+                </tr>
+            </xpath>
+        </template>
+    </data>
+</odoo>
